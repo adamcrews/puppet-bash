@@ -16,8 +16,9 @@ class bash {
     require => Package['bash'],
   }
 
-  osx_chsh { $::boxen_user:
-    shell   => "${boxen::config::homebrewdir}/bin/bash",
-    require => File_line['add bash to /etc/shells'],
-  }
+# We don't want bash as our default shell
+#  osx_chsh { $::boxen_user:
+#    shell   => "${boxen::config::homebrewdir}/bin/bash",
+#    require => File_line['add bash to /etc/shells'],
+#  }
 }
